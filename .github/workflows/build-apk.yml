@@ -15,6 +15,8 @@ jobs:
           distribution: temurin
           java-version: '17'
           cache: gradle
+      - name: Prepare Gradle wrapper
+        run: chmod +x gradlew
       - name: Build debug APK
         run: ./gradlew --no-daemon clean test assembleDebug
       - name: Upload APK
